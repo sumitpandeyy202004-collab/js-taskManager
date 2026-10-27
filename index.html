@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Todo Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">✓</span>
+            <span>Task<span class="logo-blue">Flow</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#" class="active">My Tasks</a>
+            <a href="#statistics">Stats</a>
+            <a href="#pipeline">About</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+            <span>☀</span>
+            <span class="toggle-track">
+                <span class="toggle-circle"></span>
+            </span>
+        </button>
+    </header>
+
+    <main class="container">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>My <span>Tasks</span></h1>
+            <p>Organize your day, one task at a time.</p>
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics" id="statistics">
+
+            <article class="stat-card">
+                <div class="stat-icon blue">♙</div>
+                <div>
+                    <p>Total Tasks</p>
+                    <h2>12</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange">⌛</div>
+                <div>
+                    <p>Pending</p>
+                    <h2>7</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <p>Completed</p>
+                    <h2>5</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon purple">◇</div>
+                <div>
+                    <p>Categories</p>
+                    <h2>3</h2>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Add Task Form -->
+        <section class="add-task-section">
+            <h2>Add a New Task</h2>
+
+            <form class="task-form" id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="☷   Enter task title..."
+                    aria-label="Task title"
+                >
+
+                <select id="taskCategory" aria-label="Task category">
+                    <option value="">Select Category</option>
+                    <option value="Study">Study</option>
+                    <option value="College">College</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                </select>
+
+                <button type="submit" class="add-button">
+                    <span>＋</span> Add Task
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="task-controls">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="searchTask"
+                    placeholder="Search tasks..."
+                    aria-label="Search tasks"
+                >
+            </div>
+
+            <div class="status-filters">
+                <button class="filter-button selected" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter-button" data-filter="pending">
+                    Pending
+                </button>
+
+                <button class="filter-button" data-filter="completed">
+                    Completed
+                </button>
+            </div>
+
+            <select class="category-filter" id="categoryFilter">
+                <option value="all">◇ &nbsp; All Categories</option>
+                <option value="Study">Study</option>
+                <option value="College">College</option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+            </select>
+
+        </section>
+
+        <!-- Task Cards -->
+        <section class="task-grid" id="taskContainer">
+
+            <!-- Task 1 -->
+            <!-- <article
+                class="task-card task-blue"
+                data-id="1"
+                data-status="completed"
+                data-category="Study"
+            >
+                <div class="task-header">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <h3 class="task-title">Revise JavaScript DOM</h3>
+                </div>
+
+                <p class="task-date">▦ &nbsp; 19 Oct 2026</p>
+
+                <div class="task-footer">
+                    <div class="task-badges">
+                        <span class="badge study">Study</span>
+                        <span class="badge completed">Completed</span>
+                    </div>
+
+                    <div class="task-actions">
+                        <button class="edit-button" type="button">✎ Edit</button>
+                        <button class="delete-button" type="button">▤ Delete</button>
+                    </div>
+                </div>
+            </article> -->
+        </section>
+
+        <!-- Empty State -->
+        <p class="empty-message" id="emptyMessage" hidden>
+            No tasks found. Add a new task to get started!
+        </p>
+
+        <!-- Browser Rendering Pipeline -->
+        <section class="pipeline-section" id="pipeline">
+
+            <div class="pipeline-heading">
+                <span class="pipeline-icon">▣</span>
+
+                <div>
+                    <h2>Browser Rendering Pipeline</h2>
+                    <p>How a webpage is rendered by the browser</p>
+                </div>
+            </div>
+
+            <div class="pipeline-flow">
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box html-box">HTML</div>
+                    <div class="pipeline-box css-box">CSS</div>
+                </div>
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box">Parsing</div>
+                    <div class="pipeline-box">Parsing</div>
+                </div>
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box">Tokenization</div>
+                    <div class="pipeline-box">Tokenization</div>
+                </div>
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box dom-box">DOM Tree</div>
+                    <div class="pipeline-box cssom-box">CSSOM Tree</div>
+                </div>
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box render-box">Render Tree</div>
+                </div>
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box">Paint</div>
+                </div>
+
+                <div class="pipeline-column">
+                    <div class="pipeline-box display-box">Display</div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>Built with HTML, CSS & Vanilla JavaScript</p>
+            <p>TaskFlow &copy; 2026</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
